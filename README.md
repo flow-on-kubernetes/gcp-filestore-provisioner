@@ -17,7 +17,7 @@ After running script successfully terminal will display commands to deploy helm 
 ####    3) Create service account
         a) Service account should have Filestore viewer and Filestore editor roles.
 
-####    3) Run the script
+####    4) Run the script
         a) ./filestore.sh --action <create|delete> --project <project name> --location <location like us-east1> --fs-name <filestore name> --fs-network <network name like default>"
 
         Where:
@@ -32,7 +32,7 @@ After running script successfully terminal will display commands to deploy helm 
 
         Note: -fs-network should be same as gke network otherwise nfs will not mount. 
         
-####    4) Deploy helm chart
+####    5) Deploy helm chart
         helm repo add stable https://kubernetes-charts.storage.googleapis.com/
         helm repo update
         helm install <name> stable/nfs-client-provisioner  --set nfs.server=<filestore ip address> --set nfs.path=/filestore
